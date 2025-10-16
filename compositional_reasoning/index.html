@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Video models are zero-shot learners and reasoners" />
+    <meta property="og:title" content="Generalizable Reasoning through Compositional Energy Minimization" />
     <meta
       property="og:description"
-      content="Video models like Veo 3 are on a path to become vision foundation models."
+      content="Generalizable Reasoning through Compositional Energy Minimization"
     />
-    <meta property="og:image" content="https://video-zero-shot.github.io/assets/preview.png" />
-    <meta property="og:url" content="https://video-zero-shot.github.io/" />
+    <meta property="og:image" content="https://alexoarga.github.io/compositional_reasoning/assets/preview.png" />
+    <meta property="og:url" content="https://alexoarga.github.io/compositional_reasoning" />
     <meta property="og:type" content="website" />
 
     <!-- Favicon -->
@@ -187,6 +187,17 @@
         font-size: 1.5rem;
         margin-bottom: 1rem;
         text-align: center;
+      }
+
+      .title-general {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .text-general {
+        text-align: justify;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       }
 
       .text-section p {
@@ -438,7 +449,7 @@
           <br class="title-break" /> Energy Minimization
         </h1>
         <div class="authors">
-          <a href="https://oarga.github.io/" target="_blank" rel="noopener noreferrer"
+          <a href="https://alexoarga.github.io/" target="_blank" rel="noopener noreferrer"
             >Alexandru Oarga</a
           >,
           <a href="https://yilundu.github.io/" target="_blank" rel="noopener noreferrer"
@@ -468,14 +479,14 @@
         <i class="fas fa-file-pdf"></i>
           PDF
         </a>
-        <a class="btn-link" href="#podcast-section">
+        <a class="btn-link" href="https://github.com/alexOarga/compositional_reasoning">
           <i class="fa-brands fa-github"></i>Code
         </a>
       </div>
 
       <div class="text-section">
         <h2>TL;DR</h2>
-        <p>
+        <p class="text-general">
           Compositional energy-based approach outperforms existing methods by combining
            subproblem energy landscapes, enabling better generalization to larger and 
            more complex reasoning problems. Parallel Energy Minimization is applied to 
@@ -527,7 +538,7 @@
     <div class="content-wrapper">
       <div class="text-section">
         <h2>Abstract</h2>
-        <p>
+        <p class="text-general">
           Generalization is a key challenge in machine learning, specifically in reasoning
 tasks, where models are expected to solve problems more complex than those
 encountered during training. Existing approaches typically train reasoning models
@@ -554,9 +565,9 @@ to generalize to larger and more complex problems.
         <div class="columns is-centered">
           <div class="column is-full-width">
             
-            <h2 class="section-header modeling-color">Compositional Reasoning</h2>
+            <h2 class="title-general">Compositional Reasoning</h2>
             <!-- align left -->
-            <p style="text-align: justify; font-family: 'Noto Sans', sans-serif;">
+            <p class="text-general">
               We propose a framework that generalizes to complex problems by decomposing 
               them into simpler, tractable subproblems with their own energy-based models (EBMs). 
               A global solution is then obtained by jointly minimizing the sum of the subproblem 
@@ -587,14 +598,14 @@ to generalize to larger and more complex problems.
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h2 class="section-header modeling-color">Parallel Energy Minimization</h2>
+            <h2 class="title-general">Parallel Energy Minimization</h2>
             <!--
             <h2 class="title is-4" style="text-align: left; margin-bottom: 0.5rem; font-family: 'Noto Sans', sans-serif;">
               N-queens
             </h2>
             -->
             <!-- align left -->
-            <p style="text-align: justify; font-family: 'Noto Sans', sans-serif;">
+            <p class="text-general">
               To sample from complex energy landscapes, obtained after combining
               multiple subproblem energy functions, we propose a novel
                 optimization framework called Parallel Energy Minimization (PEM).
@@ -615,7 +626,7 @@ to generalize to larger and more complex problems.
                   we effectively generate valid solutions to the problem.
                 </div>
               </figure>
-
+              <br>
               <figure>
                 <img src="imgs/color.gif" alt="N-Queens" style="width: 100%; max-width: 1000px; "/>
                 <div class="left-caption">
@@ -625,6 +636,17 @@ to generalize to larger and more complex problems.
                   By using multiple particles with PEM, we are able to find a valid coloring of the graph.
                 </div>
               </figure>
+              <br>
+              <figure>
+                <img src="imgs/x_words.gif" alt="N-Queens" style="width: 100%; max-width: 1000px; "/>
+                <div class="left-caption">
+                  <br>
+                  <b>Crosswords.</b>
+                  We illustrate the generation process of a solution to a given crossword puzzle using eight particles.
+                  Hints for each word are omitted for clarity.
+                </div>
+              </figure>
+
             </div>
           </div>
         </div>
@@ -637,14 +659,16 @@ to generalize to larger and more complex problems.
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-full-width has-text-justified">
-            <h2 class="section-header modeling-color">Performance</h2>
+            <h2 class="title-general">Performance</h2>
 
-            <p style="text-align: justify; font-family: 'Noto Sans', sans-serif;">
+            <p class="text-general">
               Our approch can generate correct solutions to the 8-queens problem with a
               higher accuracy than existing state-of-the-art methods. We report below
               the performance of our method compared with baselines and the effect of
               varying the number of particles.
             </p>
+
+            <br>
 
             <div class="columns is-vcentered">
               <div class="column">
@@ -667,12 +691,16 @@ to generalize to larger and more complex problems.
               </div>
             </div>
 
-            <p style="text-align: justify; font-family: 'Noto Sans', sans-serif;">
+            <br>
+
+            <p class="text-general">
               Our approch can generate correct solutions to the 8-queens problem with a
               higher accuracy than existing state-of-the-art methods. We report below
               the performance of our method compared with baselines and the effect of
               varying the number of particles.
             </p>
+
+            <br>
 
             <img src="imgs/results_sat.png" style="width: 70%; display: block; margin: auto;"/>
 
@@ -686,6 +714,8 @@ to generalize to larger and more complex problems.
               while larger distribution has 100 instances with 50 variables and 218 clauses.
               Our approach outperforms existing methods.
             </p>
+
+            <br>
 
             <img src="imgs/results_color.png" style="width: 70%; display: block; margin: auto;"/>
 
@@ -711,8 +741,8 @@ to generalize to larger and more complex problems.
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h2 class="section-header manipulation-color">Related Projects</h2>
-            <div class="paragraph">
+            <h2 class="title-general">Related Projects</h2>
+            <div class="paragraph text-general">
               Check out a list of our related papers on compositional generation and energy based models. A full list can be found <a href="https://energy-based-model.github.io/Energy-based-Model-MIT/">here</a>!
             </div>
             <br>
@@ -726,7 +756,7 @@ to generalize to larger and more complex problems.
               <div class="paper-title paragraph">
                 <a href="https://energy-based-model.github.io/ired/"> Learning Iterative Reasoning through Energy Diffusion</a>
             </div>
-            <div class="paragraph">
+            <div class="paragraph text-general">
               We propose energy optimization as an approach to add iterative reasoning into neural network. We illustrate how this procedure enables generalization to harder instances of problems unseen at training time on both continuous, discrete and image processing tasks. 
             </div>
             </div>
@@ -743,7 +773,7 @@ to generalize to larger and more complex problems.
               <div class="paper-title paragraph">
                 <a href="https://energy-based-model.github.io/reduce-reuse-recycle/">Reduce, Reuse, Recycle: Compositional Generation with Energy-Based Diffusion Models and MCMC</a>
             </div>
-            <div class="paragraph">
+            <div class="paragraph text-general">
                 We propose new samplers, inspired by MCMC, to enable successful compositional generation. Further, we propose an energy-based parameterization of diffusion models which enables the use of new compositional operators and more sophisticated, Metropolis-corrected samplers.
             </div>
             </div>
@@ -757,7 +787,7 @@ to generalize to larger and more complex problems.
 
     <div class="content-wrapper">
       <div class="citation-section">
-        <h2>BibTeX</h2>
+        <h2 class="title-general">BibTeX</h2>
         <div class="citation-box">
           <pre id="citation-text" class="citation-pre">
 @article{oarga2025generalizable,
