@@ -674,7 +674,7 @@ to generalize to larger and more complex problems.
 
             <div class="columns is-vcentered">
               <div class="column">
-                  <img src="imgs/results_nqueens.png">
+                  <img src="imgs/correct_instances_barplot.png">
                   <p class="left-caption">
                   <b>8-Queens Problem Evaluation. </b>We compare the performance
                     against state-of-the-art combinatorial optimization models on 
@@ -696,15 +696,17 @@ to generalize to larger and more complex problems.
             <br>
 
             <p class="text-general">
-              Our approch can generate correct solutions to the 8-queens problem with a
-              higher accuracy than existing state-of-the-art methods. We report below
-              the performance of our method compared with baselines and the effect of
-              varying the number of particles.
+              Our method outperforms the previous state-of-the-art neural combinatorial 
+              and SAT solvers, and is able to find a larger number
+              of correct instances of the problem in the 3-SAT solving.
+              It consistently outperforms other approaches both within the training distribution and 
+              when applied to larger, out-of-distribution instances.
+              We report below the comparison in both distributions.
             </p>
 
             <br>
 
-            <img src="imgs/results_sat.png" style="width: 70%; display: block; margin: auto;"/>
+            <img src="imgs/satisfied_clauses_barplot.png" style="width: 100%; display: block; margin: auto;"/>
 
             <p class="left-caption">
               <b>3-SAT Problem Evaluation. </b> We compare the performance
@@ -719,13 +721,22 @@ to generalize to larger and more complex problems.
 
             <br>
 
-            <img src="imgs/results_color.png" style="width: 70%; display: block; margin: auto;"/>
+            <p class="text-general">
+              We compare our approach with GNN-based methods for graph coloring and show that it
+              is able to generalize to larger graphs and different graph distributions
+              while maintaining strong performance across different scales.
+              On average, our method produces solutions with fewer conflicting edges. The comparison with other methods is presented below.
+            </p>
+
+            <br>
+
+            <img src="imgs/distributions_barplot.png" style="width: 100%; display: block; margin: auto;"/>
 
             <p class="left-caption">
               <b>Graph Coloring Problem Evaluation. </b> 
               We compare the performance
               against canonical GNNs and GNN-based methods for graph coloring
-              on different random graph distributions and the COLOR benchmark.
+              on different random graph distributions.
               Performance is measured as the number of conflicting edges, with lower indicating better. 
               For each distribution, we report the average over five instances.
               Our approach outperforms existing methods on most instances
