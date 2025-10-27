@@ -440,6 +440,56 @@
         text-align: center;
       }
 
+
+      .header-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 24px 0;
+      }
+
+      .neurips-subtitle {
+        display: inline-flex;
+        align-items: center;
+        color: rgb(55, 65, 81);
+        background: white;
+        padding: 12px 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgb(229, 231, 235);
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .button-wrapper {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .train-label {
+        display: inline-block;
+        background: rgb(249, 250, 251); /* light gray background */
+        color: rgb(31, 41, 55); /* dark gray text */
+        padding: 8px 16px;
+        border-radius: 8px;
+        border-left: 4px solid rgb(107, 114, 128); /* gray left accent */
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+
+      .test-label {
+        display: inline-block;
+        background: white;
+        color: rgb(185, 28, 28); /* deep red text */
+        padding: 1px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(220, 38, 38, 0.15);
+        border: 1px solid rgb(254, 226, 226); /* very subtle red border */
+      }
+
     </style>
   </head>
   <body>
@@ -449,41 +499,36 @@
           <br class="title-break" /> Energy Minimization
         </h1>
         <div class="authors">
-          <a href="https://alexoarga.github.io/" target="_blank" rel="noopener noreferrer"
-            >Alexandru Oarga</a
-          >,
-          <a href="https://yilundu.github.io/" target="_blank" rel="noopener noreferrer"
-            >Yilun Du</a
-          >
+          <a href="https://alexoarga.github.io/" target="_blank" rel="noopener noreferrer" class="text-general">
+            Alexandru Oarga
+          </a>,
+          <a href="https://yilundu.github.io/" target="_blank" rel="noopener noreferrer" class="text-general">
+            Yilun Du
+          </a>
         </div>
       </header>
 
-      <div class="button-wrapper">
-        <!--
-        <a
-          class="btn-link"
-          href="https://arxiv.org/abs/2509.20328"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="icon">
-            <i class="ai ai-arxiv"></i>
-          </span>
-          Paper
-        </a>
-        -->
-        <a
-          class="btn-link"
-          href="assets/paper.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        <i class="fas fa-file-pdf"></i>
-          PDF
-        </a>
-        <a class="btn-link" href="https://github.com/alexOarga/compositional_reasoning">
-          <i class="fa-brands fa-github"></i>Code
-        </a>
+      <div class="header-actions">
+        <p class="neurips-subtitle text-general">
+          NeurIPS 2025 (Spotlight)
+        </p>
+        
+        <div class="button-wrapper">
+          <a class="btn-link" href="https://arxiv.org/abs/2510.20607" target="_blank" rel="noopener noreferrer">
+            <span class="icon">
+              <i class="ai ai-arxiv"></i>
+            </span>
+            Paper
+          </a>
+          <a class="btn-link" href="assets/paper.pdf" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-file-pdf"></i>
+            PDF
+          </a>
+          <a class="btn-link" href="https://github.com/alexOarga/compositional_reasoning">
+            <i class="fa-brands fa-github"></i>
+            Code
+          </a>
+        </div>
       </div>
 
       <div class="text-section">
@@ -506,31 +551,40 @@
       <div class="text-section">
             <div class="grid-container">
               <!-- Row 1 -->
-              <div class="label-cell">Train</div>
+              <div class="label-cell test-label text-general">Train</div>
               <div class="gif-cell">
-                  <img src="imgs/nqueens_row.gif" alt="Train example 1">
+                  <img src="imgs_small/nqueens-row.gif" alt="Train example 1">
               </div>
               <div class="gif-cell">
                   <img src="imgs/color_edge.gif" alt="Train example 2">
               </div>
               <div class="gif-cell">
-                  <img src="imgs/xwords_row.gif" alt="Train example 2">
+                  <img src="imgs_small/xwords_row.gif" alt="Train example 2">
               </div>
 
               <!-- Row 2 -->
-              <div class="label-cell">Test</div>
+              <div class="label-cell test-label text-general">Test</div>
               <div class="gif-cell">
-                  <img src="imgs/nqueens_single.gif" alt="Test example 1">
-                  <p class="small-caption">N-Queens</p>
+                  <img src="imgs_small/nqueens-single.gif" alt="Test example 1">
               </div>
               <div class="gif-cell">
                   <img src="imgs/color_full.gif" alt="Test example 2">
+              </div>
+              <div class="gif-cell">
+                  <img src="imgs_small/xwords.gif" alt="Test example 2">
+              </div>
+
+              <div class="label-cell"></div>
+              <div class="gif-cell">
+                  <p class="small-caption">N-Queens</p>
+              </div>
+              <div class="gif-cell">
                   <p class="small-caption">Graph Coloring</p>
               </div>
               <div class="gif-cell">
-                  <img src="imgs/xwords.gif" alt="Test example 2">
                   <p class="small-caption">Crosswords</p>
               </div>
+
             </div>
 
           </div>
@@ -619,7 +673,7 @@ to generalize to larger and more complex problems.
             <div class="content-section">
               <!-- include imgs/nqueens.gif-->
               <figure>
-                <img src="imgs/nqueens.gif" alt="N-Queens" style="width: 100%; max-width: 1000px; "/>
+                <img src="imgs_small/nqueens.gif" alt="N-Queens" style="width: 100%; max-width: 1000px; "/>
                 <div class="left-caption">
                   <br>
                   <b>N-Queens Problem.</b>
@@ -630,7 +684,7 @@ to generalize to larger and more complex problems.
               </figure>
               <br>
               <figure>
-                <img src="imgs/color.gif" alt="N-Queens" style="width: 100%; max-width: 1000px; "/>
+                <img src="imgs_small/color.gif" alt="N-Queens" style="width: 100%; max-width: 1000px; "/>
                 <div class="left-caption">
                   <br>
                   <b>Graph Coloring Problem.</b>
@@ -640,7 +694,7 @@ to generalize to larger and more complex problems.
               </figure>
               <br>
               <figure>
-                <img src="imgs/x_words.gif" alt="N-Queens" style="width: 100%; max-width: 1000px; "/>
+                <img src="imgs_small/x_words.gif" alt="N-Queens" style="width: 100%; max-width: 1000px; "/>
                 <div class="left-caption">
                   <br>
                   <b>Crosswords.</b>
@@ -806,7 +860,7 @@ to generalize to larger and more complex problems.
 @article{oarga2025generalizable,
   title={Generalizable Reasoning through Compositional Energy Minimization},
   author={Oarga, Alexandru and Du, Yilun},
-  journal={arXiv preprint arXiv:XXXX},
+  journal={arXiv preprint arXiv:2510.20607},
   year={2025}
 }</pre
           >
