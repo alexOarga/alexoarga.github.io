@@ -140,3 +140,10 @@ span.highlight {
     display: inline-block;
     border-radius: 10px;
 }
+
+.one {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* optional */
+  height: 100%;
+}
